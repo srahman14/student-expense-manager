@@ -102,23 +102,34 @@ public class ExpenseManager {
         Scanner expenseAmount = new Scanner(System.in);
         double amount = expenseAmount.nextDouble();
         System.out.println("Enter discount (%): ");
-        Scanner discountedPercentegeInput = new Scanner(System.in);
-        double discountedPercentege = discountedPercentegeInput.nextDouble();
+        Scanner discountedPercentageInput = new Scanner(System.in);
+        double discountedPercentage = discountedPercentageInput.nextDouble();
 
-        DiscountedExpense newDiscountedExpense = new DiscountedExpense(title, amount, discountedPercentege);
+        DiscountedExpense newDiscountedExpense = new DiscountedExpense(title, amount, discountedPercentage);
         expenses.add(newDiscountedExpense);
     }
 
     public void viewAllExpenses() {
+        if (expenses.isEmpty()) {
+            System.out.println("There are no expenses to view");
+        }
+
         expenses.forEach(expense -> { expense.showInfo(); System.out.println("---------------------------");});
     }
 
     public void showTotalSpending() {
+        if (expenses.isEmpty()) {
+            System.out.println("There are no expenses.");
+        }
+
         expenses.forEach(expense -> { totalSpending += expense.getFinalAmount(); });
         System.out.println("Total Spending: " + totalSpending);
     }
 
     public void showHighestExpense() {
+        if (expenses.isEmpty()) {
+            System.out.println("There are no expenses to view");
+        }
         expenses.forEach(expense -> { currentHighest = Math.max(currentHighest, expense.getFinalAmount());} );
         System.out.println("Highest Expense: " + currentHighest);
     }

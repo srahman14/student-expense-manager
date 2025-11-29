@@ -12,30 +12,29 @@
 //}
 
 public class Expense {
-    private String title;
-    private double amount;
+    // Fields defined as final, as they won't change after creation
+    // From CRUD perspective, this project only requires Creating and Reading
+    // Since no update or delete needed, use of final is best.
+    private final String title;
+    private final double amount;
 
+    // Constructor
     public Expense(String title, double amount) {
         this.title = title;
         this.amount = amount;
     }
 
+    // Getter Method for Title
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String newTitle) {
-        this.title = newTitle;
-    }
-
-    public void setAmount(double newAmount){
-        this.amount = newAmount;
-    }
-
+    // Getter Method for Amount
     public double getAmount() {
         return amount;
     }
 
+    // Method for final amount
     public double getFinalAmount() {
         return amount;
     }
@@ -43,6 +42,7 @@ public class Expense {
     public void showInfo() {
         System.out.println("Expense: " + title);
         System.out.println("Amount: " + amount);
+        System.out.println("Final amount: " + getFinalAmount());
         System.out.println("Type: Normal");
     }
 }
