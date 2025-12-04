@@ -1,30 +1,34 @@
-//class Test2 {
-//    public static void main(String[] args) {
-//        // Test Method
-//        Expense e1 = new DiscountedExpense("Monitor", 300, 20);
-//        System.out.println(e1.getAmount());
-//        System.out.println(e1.getTitle());
-//        e1.showInfo();
-//        e1.setAmount(200);
-//        e1.setTitle("TV");
-//        e1.showInfo();
-//    }
-//}
-
 public class DiscountedExpense extends Expense {
-    private final double discountedPercentage;
+    // DiscountedExpense fields
+    private double discountedPercentage;
 
-    public DiscountedExpense(String title, double amount, double discountedPercent) {
+    // Constructor
+    public DiscountedExpense(String title, double amount, double discountedPercentage) {
         super(title, amount);
         this.discountedPercentage = discountedPercentage;
     }
 
-    // Method Overriding (Polymorphism)
+    // Getter Method for Discount
+    public double getDiscountedPercentage() {
+        return discountedPercentage;
+    }
+
+    // Setter Method for Discount
+    public void setDiscountedPercentage(double discountedPercentage) {
+        this.discountedPercentage = discountedPercentage;
+    }
+
+    // Method Overriding
+    // Overrides parent (Expense) method for calculating final amount for price
+    // after applying the discount
     @Override
     public double getFinalAmount() {
         return getAmount() * (1 - discountedPercentage/100);
     }
 
+    // Method Overriding
+    // Overrides parent (Expense) method for printing discounted expense details
+    @Override
     public void showInfo() {
         System.out.println("Expense: " + getTitle());
         System.out.println("Amount: " + getAmount());
