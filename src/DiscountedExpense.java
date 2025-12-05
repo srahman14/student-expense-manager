@@ -1,3 +1,13 @@
+/**
+ * DiscuontedExpense.java
+ * This is the DiscuontedExpense.java file holding the DiscuontedExpense class.
+ * The DiscuontedExpense class is child class of the Expense class.
+ * The fields the same as the child class plus the disccuontedPercentage field.
+ * getFinalAmount() is as method to get the final amount of the expense after
+ * the discuont is applied. showInfo() is the same method as in theexpense class
+ * with the additional discount percentage shown.
+ */
+
 public class DiscountedExpense extends Expense {
     // DiscountedExpense fields
     private double discountedPercentage;
@@ -18,7 +28,6 @@ public class DiscountedExpense extends Expense {
         this.discountedPercentage = discountedPercentage;
     }
 
-    // Method Overriding
     // Overrides parent (Expense) method for calculating final amount for price
     // after applying the discount
     @Override
@@ -26,7 +35,6 @@ public class DiscountedExpense extends Expense {
         return getAmount() * (1 - discountedPercentage/100);
     }
 
-    // Method Overriding
     // Overrides parent (Expense) method for printing discounted expense details
     @Override
     public void showInfo() {

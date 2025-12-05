@@ -1,3 +1,11 @@
+/**
+ * ExpenseManagerApp.java
+ * This is the main program that displays the Student Expense Manager
+ * menu and allows users to track their expenses. Optinos are, adding an expense,
+ * adding a discounted expense, viewing all expenses, viewing the total spending,
+ * and viewing the highest expense.
+ */
+
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.InputMismatchException;

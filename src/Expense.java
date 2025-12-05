@@ -1,3 +1,12 @@
+/**
+ * Expense.java
+ * This is the Expense.java file holding the Expense class.
+ * The fields are title and amount, title set as String and
+ * amount set as a double. getFinalaAmount() is a method to return
+ * the final amount of the expense.
+ * showInfo() is a method defined to print out the details of the expense class.
+ */
+
 public class Expense {
     // Expense Fields
     private String title;
