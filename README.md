@@ -1,4 +1,11 @@
 # Student Expense Manager
+
+---
+
+![Student Expense Manager](images/start.png)
+
+---
+
 ## Main Features
 - Adding a normal expense, add a normal expense (normal by being not discounted)
 - Adding a discounted expense, similar to a normal expense with a discount applied to the final amount
